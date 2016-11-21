@@ -14,6 +14,7 @@ get '/' do
   @board = session[:game].board.board
   if session[:game].board.win? || session[:game].board.tie?
     @gameover = true
+    @winner = session[:game].winner
   end
   if session[:game].active_player.is_a? AI
     position = session[:game].active_player.place_mark(session[:game])

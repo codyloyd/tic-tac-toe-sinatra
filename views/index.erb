@@ -6,8 +6,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="container">
   <% if @gameover %>
-    <h1>GAMEOVER</h1>
+    <h1>GAMEOVER:  
+      <% if @winner %>
+        YOU LOSE
+      <% else %>
+        IT'S A TIE
+      <% end %>
+    </h1>
   <% else %>
     <h1>TIC TAC TACO</h1>
   <% end %>
@@ -28,11 +35,12 @@
       <div class="square" id=square9 value=8><%= @board[8] %></div>
     </div>
   </div>
-  <a href="/newgame"><h2>Start Over</h2></a>
-  <p>You're X.. the computer is O.<br>The game selects randomly who starts.<br>You might tie... but you will not ever beat the computer. </p>
+  <a href="/newgame">Start Over?</a>
+  <p>You're X.. the computer is O<br>The game selects randomly who starts<br>You might tie... but you will not ever beat the computer</p>
   <% if !@gameover %>
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script src="script.js"></script>
   <% end %>
+</div>
 </body>
 </html>
