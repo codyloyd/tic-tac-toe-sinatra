@@ -1,5 +1,3 @@
-require 'rainbow'
-
 # rubocop thinks i need to describe this class with a comment
 class Gameboard
   attr_accessor :board
