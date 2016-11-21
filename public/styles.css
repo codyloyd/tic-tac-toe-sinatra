@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+* {
+  box-sizing: border-box;
+}
+
+.gameboard {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background: url('gameboard.svg');
+  background-size: 400px;
+  background-position: center;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  flex-direction: inline;
+}
+
+.square {
+  font-family: "Montserrat";
+  font-size: 52px;
+  display: flex;
+  flex: 1;
+  flex-direction: inline;
+  align-items: center;
+  justify-content: center;
+}
