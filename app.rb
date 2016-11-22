@@ -12,6 +12,7 @@ enable :sessions
 get '/' do
   redirect '/newgame' unless session[:game]
   @board = session[:game].board.board
+  gon.board = @board
   if session[:game].board.win? || session[:game].board.tie?
     @gameover = true
     @winner = session[:game].winner
@@ -22,7 +23,7 @@ get '/' do
     session[:game].board.add(position: position, mark: mark)
     session[:game].switch_active_player
   end
-  erb :index
+  erb :gameboard, :layout => :index
 end
 
 post '/' do
@@ -41,6 +42,3 @@ get '/newgame' do
   redirect '/'
 end
 
-get '/gameover' do
-  erb :gameover
-end 

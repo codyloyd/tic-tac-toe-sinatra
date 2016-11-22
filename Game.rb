@@ -8,30 +8,16 @@ class Game
     @board = args[:board]
     @player1 = args[:player1]
     @player2 = args[:player2]
-    @active_player = args[:active_player] || set_initial_player(player1, player2)
+    @active_player = args[:active_player] || 
+      set_initial_player(player1, player2)
   end
 
-  def set_initial_player(player1,player2)
-    if (rand 2) == 1
-      player1
-    else
-      player2
-    end
-  end
 
   def switch_active_player
     if active_player == player1
       self.active_player = player2
     else
       self.active_player = player1
-    end
-  end
-
-  def non_active_player
-    if self.active_player == player1
-      player2
-    else
-      player1
     end
   end
 
@@ -54,5 +40,15 @@ class Game
       player2: player2,
       active_player: active_player
     )
+  end
+
+  private
+
+  def set_initial_player(player1,player2)
+    if (rand 2) == 1
+      player1
+    else
+      player2
+    end
   end
 end

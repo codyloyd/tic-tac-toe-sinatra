@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    gon-sinatra (0.1.2)
+      sinatra
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
@@ -14,6 +16,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  gon-sinatra
   sinatra
 
 BUNDLED WITH

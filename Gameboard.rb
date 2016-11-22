@@ -40,15 +40,6 @@ class Gameboard
     end
   end
 
-  def to_s
-    board_with_spaces = board.map.with_index { |e, i| e == '' ? Rainbow(i).blue : e }
-    " #{board_with_spaces[0]} | #{board_with_spaces[1]} | #{board_with_spaces[2]}
----+---+---
- #{board_with_spaces[3]} | #{board_with_spaces[4]} | #{board_with_spaces[5]}
----+---+---
- #{board_with_spaces[6]} | #{board_with_spaces[7]} | #{board_with_spaces[8]}"
-  end
-
   def clone
     Gameboard.new(board.clone)
   end

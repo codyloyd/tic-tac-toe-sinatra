@@ -3,38 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>tictactoe</title>
+  <%= include_gon %>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
-  <% if @gameover %>
-    <h1>GAMEOVER:  
-      <% if @winner %>
-        YOU LOSE
-      <% else %>
-        IT'S A TIE
-      <% end %>
-    </h1>
-  <% else %>
-    <h1>TIC TAC TACO</h1>
-  <% end %>
-  <div class="gameboard">
-    <div class="row">
-      <div class="square" id=square1 value=0><%= @board[0] %></div>
-      <div class="square" id=square2 value=1><%= @board[1] %></div>
-      <div class="square" id=square3 value=2><%= @board[2] %></div>
-    </div>
-    <div class="row">
-      <div class="square" id=square4 value=3><%= @board[3] %></div>
-      <div class="square" id=square5 value=4><%= @board[4] %></div>
-      <div class="square" id=square6 value=5><%= @board[5] %></div>
-    </div>
-    <div class="row">
-      <div class="square" id=square7 value=6><%= @board[6] %></div>
-      <div class="square" id=square8 value=7><%= @board[7] %></div>
-      <div class="square" id=square9 value=8><%= @board[8] %></div>
-    </div>
-  </div>
+
+
+  <%= yield %>
+
   <a href="/newgame">Start Over?</a>
   <p>You're X.. the computer is O<br>The game selects randomly who starts<br>You might tie... but you will not ever beat the computer</p>
   <% if !@gameover %>
