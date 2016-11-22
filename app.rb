@@ -12,7 +12,6 @@ enable :sessions
 get '/' do
   redirect '/newgame' unless session[:game]
   @board = session[:game].board.board
-  gon.board = @board
   if session[:game].board.win? || session[:game].board.tie?
     @gameover = true
     @winner = session[:game].winner
